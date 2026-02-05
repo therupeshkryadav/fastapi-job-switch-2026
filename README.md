@@ -4,6 +4,11 @@ A comprehensive learning path for backend development using FastAPI and PostgreS
 
 ## Phases
 
+### Phase 0: Python basics
+- Location: `phase-0-python-basics/`
+- Simple interactive scripts to learn Python input/output and basic types
+- Includes `myapp.py` demonstrating input, basic math, and string formatting
+
 ### Phase 1: FastAPI Basics
 - Location: `phase-1-fastapi-basics/`
 - In-memory student management API
@@ -32,6 +37,9 @@ Each phase has its own README with detailed setup instructions.
 ```
 backend-learning-track/
 ├── README.md
+├── phase-0-python-basics/
+│   ├── myapp.py
+│   └── README.md
 ├── phase-1-fastapi-basics/
 │   ├── myapi.py
 │   └── README.md
