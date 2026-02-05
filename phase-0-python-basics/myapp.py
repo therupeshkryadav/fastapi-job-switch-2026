@@ -68,3 +68,9 @@ connect with me as soon as possible.
 Thank you
 '''
 print(message)
+
+# Demonstrate string indexing: strings are sequences of characters and are
+# indexed starting at 0. Accessing course[4] returns the fifth character.
+course = "Python Learning"
+# This will print the character at index 4 (0-based index), which is 'o'
+print(course[4])
