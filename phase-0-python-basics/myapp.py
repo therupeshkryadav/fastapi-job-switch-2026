@@ -80,6 +80,53 @@ Thank you
 '''
 print(message)
 
+# ----------------------------
+# STRING CONCATENATION EXAMPLES
+# ----------------------------
+# String concatenation means joining strings together. There are several ways:
+
+# Method 1: Using the + operator
+first_name = "John"
+last_name = "Doe"
+full_name = first_name + " " + last_name
+print(f"\n--- String Concatenation ---")
+print(f"Using + operator: {full_name}")
+
+# Method 2: Using f-strings (modern, recommended)
+greeting = f"Hello, {first_name} {last_name}!"
+print(f"Using f-string: {greeting}")
+
+# Method 3: Using .join() method with a list of strings
+words = ["Welcome", "to", "Python", "programming"]
+sentence = " ".join(words)
+print(f"Using .join(): {sentence}")
+
+# ----------------------------
+# LEN() FUNCTION EXAMPLES
+# ----------------------------
+# The len() function returns the number of characters in a string.
+
+print(f"\n--- len() Function ---")
+test_string = "Python"
+print(f"len('{test_string}') = {len(test_string)}")
+
+# Count characters including spaces and punctuation
+test_message = "Hello, World!"
+print(f"len('{test_message}') = {len(test_message)}")
+
+# Practical use: validate password length
+password = input("Enter a password to validate: ")
+password_length = len(password)
+print(f"Your password has {password_length} characters.")
+if password_length >= 8:
+    print("✓ Strong password (8+ characters)")
+else:
+    print("✗ Weak password (less than 8 characters)")
+
+# Combine concatenation and len()
+info = f"Welcome {name}! Your name '{name}' has {len(name)} letters."
+print(f"\nCombined example: {info}")
+
 # Demonstrate string indexing and slicing. Strings are sequences of
 # characters and follow 0-based indexing. Slicing `start:end` returns a
 # substring from `start` up to but not including `end`.
@@ -104,7 +151,7 @@ print("Type of course:", type(course))
 # Operator examples: arithmetic, relational, assignment, logical
 # ----------------------------
 print("\n--- Operator examples ---")
-a = 10
+a = -10
 b = 3
 
 # Arithmetic operators
