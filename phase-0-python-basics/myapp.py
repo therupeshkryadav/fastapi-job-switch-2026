@@ -696,3 +696,360 @@ print(f"   greatest = {value}, position = num{pos}")
 print(f"   → Greatest: {value} (at position {pos})")
 
 print("\n" + "="*80)
+print("LISTS & TUPLES - COMPREHENSIVE GUIDE")
+print("="*80)
+
+# ==============================================================================================
+# LISTS - ORDERED, MUTABLE (changeable), INDEXED
+# ==============================================================================================
+
+print("\n" + "-"*80)
+print("PART 1: LISTS - ORDERED, MUTABLE (changeable), INDEXED")
+print("-"*80)
+
+# 1. CREATING LISTS
+print("\n1. CREATING LISTS:")
+print("   # Empty list")
+empty_list = []
+print(f"   empty_list = []")
+print(f"   Output: {empty_list}")
+
+print("\n   # List with numbers")
+numbers = [10, 20, 30, 40, 50]
+print(f"   numbers = [10, 20, 30, 40, 50]")
+print(f"   Output: {numbers}")
+
+print("\n   # List with mixed data types")
+mixed_list = [1, "Python", 3.14, True, None]
+print(f"   mixed_list = [1, 'Python', 3.14, True, None]")
+print(f"   Output: {mixed_list}")
+
+print("\n   # List with strings")
+fruits = ["apple", "banana", "cherry", "date"]
+print(f"   fruits = ['apple', 'banana', 'cherry', 'date']")
+print(f"   Output: {fruits}")
+
+# 2. ACCESSING ELEMENTS (Indexing)
+print("\n2. ACCESSING ELEMENTS (Indexing):")
+print(f"   numbers = {numbers}")
+print(f"   numbers[0] = {numbers[0]}      # First element (index 0)")
+print(f"   numbers[2] = {numbers[2]}      # Third element (index 2)")
+print(f"   numbers[-1] = {numbers[-1]}    # Last element (negative index)")
+print(f"   numbers[-2] = {numbers[-2]}    # Second-to-last element")
+
+# 3. SLICING LISTS
+print("\n3. SLICING LISTS (syntax: list[START:STOP:STEP]):")
+print(f"   numbers = {numbers}")
+print(f"   numbers[1:4] = {numbers[1:4]}   # Elements at indices 1, 2, 3 (4 excluded)")
+print(f"   numbers[2:] = {numbers[2:]}     # From index 2 to end")
+print(f"   numbers[:3] = {numbers[:3]}     # From start to index 3 (excluded)")
+print(f"   numbers[::2] = {numbers[::2]}   # Every 2nd element")
+print(f"   numbers[::-1] = {numbers[::-1]} # Reversed list")
+
+# 4. LIST LENGTH
+print("\n4. LIST LENGTH (len() function):")
+print(f"   len(numbers) = {len(numbers)}")
+print(f"   len(fruits) = {len(fruits)}")
+print(f"   len(empty_list) = {len(empty_list)}")
+
+# 5. MODIFYING LISTS (Mutable - changeable)
+print("\n5. MODIFYING LISTS (Mutable - changeable):")
+
+# 5a. Adding elements
+print("\n   5a. ADDING ELEMENTS:")
+fruits_copy = fruits.copy()  # Copy to avoid modifying original
+print(f"   Original: {fruits_copy}")
+
+fruits_copy.append("elderberry")  # Add to end
+print(f"   After .append('elderberry'): {fruits_copy}")
+
+fruits_copy.insert(1, "blueberry")  # Insert at specific index
+print(f"   After .insert(1, 'blueberry'): {fruits_copy}")
+
+fruits_copy.extend(["fig", "grape"])  # Add multiple elements
+print(f"   After .extend(['fig', 'grape']): {fruits_copy}")
+
+# 5b. Removing elements
+print("\n   5b. REMOVING ELEMENTS:")
+print(f"   Current list: {fruits_copy}")
+
+fruits_copy.remove("berry")  # Will raise error if not found, let's use blueberry
+print(f"   After .remove('blueberry'): {[x for x in fruits_copy if x != 'blueberry']}")
+
+popped = fruits_copy.pop()  # Remove last element and return it
+print(f"   After .pop() (removed: {popped}): {fruits_copy}")
+
+popped_index = fruits_copy.pop(0)  # Remove element at index 0
+print(f"   After .pop(0) (removed: {popped_index}): {fruits_copy}")
+
+# 5c. Replacing elements
+print("\n   5c. REPLACING ELEMENTS:")
+numbers_copy = numbers.copy()
+print(f"   Original: {numbers_copy}")
+numbers_copy[1] = 999
+print(f"   After numbers_copy[1] = 999: {numbers_copy}")
+
+numbers_copy[2:4] = [111, 222]  # Replace slice
+print(f"   After numbers_copy[2:4] = [111, 222]: {numbers_copy}")
+
+# 5d. Clearing a list
+print("\n   5d. CLEARING A LIST:")
+temp_list = [1, 2, 3, 4, 5]
+print(f"   Before clear: {temp_list}")
+temp_list.clear()
+print(f"   After .clear(): {temp_list}")
+
+# 6. LIST METHODS & OPERATIONS
+print("\n6. LIST METHODS & OPERATIONS:")
+numbers = [10, 20, 30, 40, 50]
+print(f"   numbers = {numbers}")
+
+print(f"\n   .count(value) - Count occurrences:")
+counts_list = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+print(f"   {counts_list}.count(3) = {counts_list.count(3)}")
+
+print(f"\n   .index(value) - Find first index of value:")
+print(f"   {fruits}.index('cherry') = {fruits.index('cherry')}")
+
+print(f"\n   .sort() - Sort in place (modifies original):")
+unsorted = [50, 10, 30, 20, 40]
+print(f"   unsorted = {unsorted}")
+unsorted.sort()
+print(f"   After .sort(): {unsorted}")
+
+unsorted.sort(reverse=True)
+print(f"   After .sort(reverse=True): {unsorted}")
+
+print(f"\n   sorted() - Return sorted copy (doesn't modify):")
+unsorted = [50, 10, 30, 20, 40]
+sorted_list = sorted(unsorted)
+print(f"   Original: {unsorted}")
+print(f"   sorted(unsorted) = {sorted_list}")
+
+print(f"\n   .reverse() - Reverse in place:")
+rev_list = [1, 2, 3, 4, 5]
+print(f"   Before: {rev_list}")
+rev_list.reverse()
+print(f"   After .reverse(): {rev_list}")
+
+print(f"\n   min() and max() - Find minimum/maximum:")
+nums = [15, 3, 42, 7, 23]
+print(f"   {nums}")
+print(f"   min(nums) = {min(nums)}")
+print(f"   max(nums) = {max(nums)}")
+
+print(f"\n   sum() - Sum all elements:")
+print(f"   sum({nums}) = {sum(nums)}")
+
+# 7. ITERATING THROUGH LISTS
+print("\n7. ITERATING THROUGH LISTS:")
+print(f"   fruits = {fruits}")
+
+print("\n   Method 1: for-in loop")
+for fruit in fruits:
+    print(f"      - {fruit}")
+
+print("\n   Method 2: for-in with index using enumerate()")
+for i, fruit in enumerate(fruits):
+    print(f"      [{i}] = {fruit}")
+
+print("\n   Method 3: for loop with range()")
+for i in range(len(fruits)):
+    print(f"      [{i}] = {fruits[i]}")
+
+# ==============================================================================================
+# TUPLES - ORDERED, IMMUTABLE (unchangeable), INDEXED
+# ==============================================================================================
+
+print("\n" + "-"*80)
+print("PART 2: TUPLES - ORDERED, IMMUTABLE (unchangeable), INDEXED")
+print("-"*80)
+
+# 1. CREATING TUPLES
+print("\n1. CREATING TUPLES:")
+
+print("\n   # Empty tuple")
+empty_tuple = ()
+print(f"   empty_tuple = ()")
+print(f"   Output: {empty_tuple}")
+
+print("\n   # Tuple with numbers")
+coord = (10, 20, 30)
+print(f"   coord = (10, 20, 30)")
+print(f"   Output: {coord}")
+
+print("\n   # Tuple with mixed data types")
+mixed_tuple = (1, "Python", 3.14, True, None)
+print(f"   mixed_tuple = (1, 'Python', 3.14, True, None)")
+print(f"   Output: {mixed_tuple}")
+
+print("\n   # Single-element tuple (IMPORTANT: needs trailing comma)")
+single = (42,)
+print(f"   single = (42,)  # Note: trailing comma makes it a tuple")
+print(f"   Output: {single}")
+print(f"   Without comma: (42) = {42} (just a number, not a tuple)")
+
+print("\n   # Tuple without parentheses (implicit)")
+implicit_tuple = 1, 2, 3
+print(f"   implicit_tuple = 1, 2, 3  # Parentheses are optional")
+print(f"   Output: {implicit_tuple}")
+
+# 2. ACCESSING TUPLE ELEMENTS
+print("\n2. ACCESSING TUPLE ELEMENTS:")
+print(f"   coord = {coord}")
+print(f"   coord[0] = {coord[0]}      # First element")
+print(f"   coord[1] = {coord[1]}      # Second element")
+print(f"   coord[-1] = {coord[-1]}    # Last element")
+
+# 3. SLICING TUPLES
+print("\n3. SLICING TUPLES (same as lists):")
+numbers_tuple = (10, 20, 30, 40, 50)
+print(f"   numbers_tuple = {numbers_tuple}")
+print(f"   numbers_tuple[1:4] = {numbers_tuple[1:4]}")
+print(f"   numbers_tuple[::2] = {numbers_tuple[::2]}")
+print(f"   numbers_tuple[::-1] = {numbers_tuple[::-1]}")
+
+# 4. TUPLE LENGTH
+print("\n4. TUPLE LENGTH:")
+print(f"   len(coord) = {len(coord)}")
+print(f"   len(numbers_tuple) = {len(numbers_tuple)}")
+
+# 5. WHY TUPLES ARE IMMUTABLE (UNCHANGEABLE)
+print("\n5. TUPLES ARE IMMUTABLE (UNCHANGEABLE):")
+print(f"   coord = {coord}")
+print(f"   Trying to change: coord[0] = 999")
+try:
+    coord[0] = 999
+except TypeError as e:
+    print(f"   Error: {e}")
+    print(f"   → Tuples cannot be modified after creation!")
+
+# 6. TUPLE METHODS & OPERATIONS
+print("\n6. TUPLE METHODS & OPERATIONS:")
+
+colors = ("red", "green", "blue", "red", "yellow")
+print(f"   colors = {colors}")
+
+print(f"\n   .count(value) - Count occurrences:")
+print(f"   colors.count('red') = {colors.count('red')}")
+
+print(f"\n   .index(value) - Find first index of value:")
+print(f"   colors.index('blue') = {colors.index('blue')}")
+
+print(f"\n   len() - Tuple length:")
+print(f"   len(colors) = {len(colors)}")
+
+print(f"\n   min() and max():")
+nums_tuple = (15, 3, 42, 7, 23)
+print(f"   {nums_tuple}")
+print(f"   min(nums_tuple) = {min(nums_tuple)}")
+print(f"   max(nums_tuple) = {max(nums_tuple)}")
+
+print(f"\n   sum():")
+print(f"   sum({nums_tuple}) = {sum(nums_tuple)}")
+
+# 7. ITERATING THROUGH TUPLES
+print("\n7. ITERATING THROUGH TUPLES:")
+print(f"   colors = {colors}")
+
+print("\n   Using for-in loop:")
+for color in colors:
+    print(f"      - {color}")
+
+print("\n   Using enumerate():")
+for i, color in enumerate(colors):
+    print(f"      [{i}] = {color}")
+
+# 8. TUPLE UNPACKING
+print("\n8. TUPLE UNPACKING:")
+
+point = (10, 20, 30)
+x, y, z = point
+print(f"   point = {point}")
+print(f"   x, y, z = point")
+print(f"   x = {x}, y = {y}, z = {z}")
+
+print("\n   Swapping variables with tuple unpacking:")
+a, b = 5, 10
+print(f"   Before: a = {a}, b = {b}")
+a, b = b, a  # Clever Python trick!
+print(f"   After:  a = {a}, b = {b}")
+
+# ==============================================================================================
+# LISTS vs TUPLES - COMPARISON
+# ==============================================================================================
+
+print("\n" + "-"*80)
+print("LISTS vs TUPLES - SIDE-BY-SIDE COMPARISON")
+print("-"*80)
+
+print("\n╔════════════════════╦══════════════════════╦══════════════════════╗")
+print("║ FEATURE            ║ LIST                 ║ TUPLE                ║")
+print("╠════════════════════╬══════════════════════╬══════════════════════╣")
+print("║ Syntax             ║ [1, 2, 3]            ║ (1, 2, 3)            ║")
+print("║ Mutable            ║ YES (changeable)     ║ NO (unchangeable)    ║")
+print("║ Speed              ║ Slower               ║ Faster               ║")
+print("║ Memory             ║ More                 ║ Less                 ║")
+print("║ Indexing           ║ Yes - [i]            ║ Yes - [i]            ║")
+print("║ Slicing            ║ Yes                  ║ Yes                  ║")
+print("║ Methods            ║ append, remove, etc. ║ count, index only    ║")
+print("║ Dict Key           ║ NO (unhashable)      ║ YES (hashable)       ║")
+print("║ Use Case           ║ Collections change   ║ Fixed collections    ║")
+print("╚════════════════════╩══════════════════════╩══════════════════════╝")
+
+print("\nCommon Methods Comparison:")
+print("   LIST methods: append, extend, insert, remove, pop, clear, sort, reverse")
+print("   TUPLE methods: count, index")
+
+# 9. PRACTICAL EXAMPLES
+print("\n" + "-"*80)
+print("PRACTICAL EXAMPLES")
+print("-"*80)
+
+print("\n1. USING TUPLE FOR COORDINATES (immutable, won't change):")
+coordinates = [
+    (0, 0),
+    (10, 20),
+    (30, 40),
+    (50, 60)
+]
+print(f"   coordinates = {coordinates}")
+for i, (x, y) in enumerate(coordinates):
+    print(f"      Point {i}: x={x}, y={y}")
+
+print("\n2. USING LIST FOR SHOPPING CART (mutable, can change):")
+cart = ["apple", "banana"]
+print(f"   Initial cart: {cart}")
+cart.append("orange")
+print(f"   After adding orange: {cart}")
+cart.remove("banana")
+print(f"   After removing banana: {cart}")
+
+print("\n3. RETURNING MULTIPLE VALUES USING TUPLE:")
+def get_user_info():
+    """Return user information as a tuple"""
+    return ("John", "Doe", 25, "john@example.com")
+
+name, last_name, age, email = get_user_info()
+print(f"   Result: name={name}, last_name={last_name}, age={age}, email={email}")
+
+print("\n4. USING TUPLE AS DICTIONARY KEY (list cannot be used):")
+location_dict = {
+    (0, 0): "Origin",
+    (10, 20): "North",
+    (30, 40): "South",
+    (-5, -10): "West"
+}
+print(f"   location_dict = {{")
+for key, value in location_dict.items():
+    print(f"      {key}: '{value}',")
+print(f"   }}")
+
+print("\n5. FINDING SPECIFIC ITEMS IN LISTS:")
+students = ["Alice", "Bob", "Charlie", "David", "Eve"]
+print(f"   students = {students}")
+if "Charlie" in students:
+    index = students.index("Charlie")
+    print(f"   'Charlie' found at index {index}")
+
+print("\n" + "="*80)
