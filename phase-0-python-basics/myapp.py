@@ -773,7 +773,7 @@ print(f"   After .extend(['fig', 'grape']): {fruits_copy}")
 print("\n   5b. REMOVING ELEMENTS:")
 print(f"   Current list: {fruits_copy}")
 
-fruits_copy.remove("berry")  # Will raise error if not found, let's use blueberry
+fruits_copy.remove("blueberry")  # Will raise error if not found, let's use blueberry
 print(f"   After .remove('blueberry'): {[x for x in fruits_copy if x != 'blueberry']}")
 
 popped = fruits_copy.pop()  # Remove last element and return it
@@ -1053,3 +1053,20 @@ if "Charlie" in students:
     print(f"   'Charlie' found at index {index}")
 
 print("\n" + "="*80)
+
+print("DICTIONARIES - COMPREHENSIVE GUIDE")
+
+info = {
+    "key" : "value",
+    "name": "Alice",
+    "age": 30,
+    "is_student": False,
+    "scores": [85, 90, 92],
+    "address": {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "zip": "12345"
+    }
+}   
+
+print(f"   info = {info}")
